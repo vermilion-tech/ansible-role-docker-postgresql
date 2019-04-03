@@ -1,2 +1,17 @@
 ---
-# tasks file for .
+#
+
+- name: Start PostgreSQL container
+  docker_container:
+    name: "{{ container_name }}"
+    image: "{{ container_image }}"
+    recreate: yes
+    pull: yes
+    volumes:
+      - "{{ data_volume }}"
+    ports:
+      - "5432:5432"
+    env:
+      POSTGRES_PASSWORD: "{{ password }}"
+      POSTGRES_USER: "{{ user }}"
+      POSTGRES_DB: "{{ db }}"

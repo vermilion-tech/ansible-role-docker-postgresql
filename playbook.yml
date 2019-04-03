@@ -1,0 +1,8 @@
+---
+# Deploys PostgreSQL onto droplets tagged 'postgresql'
+
+- hosts: postgresql
+  become: yes
+  become_user: root
+  roles:
+    - ../ansible-role-docker-postgresql

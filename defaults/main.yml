@@ -1,2 +1,11 @@
 ---
 # defaults file for .
+
+container_name: postgresql
+container_image: postgres:11
+
+data_volume: /docker/postgres/data:/var/lib/postgresql/data
+
+password: password
+user: example
+db: example
